@@ -23,3 +23,5 @@ Before implementing any new big features I would be happy if you could either hi
 ## Graphics
 
 The official Lawnchair graphics were designed by Josh Baldassarre & Lumiq Creative. Thanks a lot to those awesome designers!
+
+感谢Lawnchair的源码提供的支持，本程序在此基础上进行的更改和维护，感谢原作者

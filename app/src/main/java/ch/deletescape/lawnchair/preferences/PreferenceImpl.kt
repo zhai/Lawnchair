@@ -208,7 +208,7 @@ open class PreferenceImpl(context: Context) : IPreferenceProvider {
     override val enablePlanes by BooleanPref(FeatureFlags.KEY_PREF_PLANE, false)
     override val showWeather by BooleanPref(FeatureFlags.KEY_PREF_WEATHER, false)
     override val lockDesktop by BooleanPref(FeatureFlags.KEY_PREF_LOCK_DESKTOP, false)
-    override val animatedClockIcon by BooleanPref(FeatureFlags.KEY_PREF_ANIMATED_CLOCK_ICON, false)
+    override val animatedClockIcon by BooleanPref(FeatureFlags.KEY_PREF_ANIMATED_CLOCK_ICON, true)  //add by zhai  更改了默认动态指针
     override val useSystemFonts by BooleanPref(FeatureFlags.KEY_PREF_USE_SYSTEM_FONTS, false)
 
     override val pinchToOverview by BooleanPref(FeatureFlags.KEY_PREF_PINCH_TO_OVERVIEW, true)
@@ -218,7 +218,7 @@ open class PreferenceImpl(context: Context) : IPreferenceProvider {
     override val hotseatShouldUseExtractedColors by BooleanPref(FeatureFlags.KEY_PREF_HOTSEAT_EXTRACTED_COLORS, true)
     override val hotseatShowArrow by BooleanPref(PreferenceFlags.KEY_PREF_HOTSEAT_SHOW_ARROW, true)
     override val hotseatShowPageIndicator by BooleanPref(PreferenceFlags.KEY_PREF_HOTSEAT_SHOW_PAGE_INDICATOR, true)
-    override val twoRowDock by BooleanPref(PreferenceFlags.KEY_TWO_ROW_DOCK, false)
+    override val twoRowDock by BooleanPref(PreferenceFlags.KEY_TWO_ROW_DOCK, true)
 
     override fun hotseatShouldUseExtractedColorsCache(default: Boolean): Boolean {
         return getBoolean(PreferenceFlags.KEY_HOTSEAT_SHOULD_USE_EXTRACTED_COLORS_CACHE, default)
@@ -237,7 +237,7 @@ open class PreferenceImpl(context: Context) : IPreferenceProvider {
     override val homeOpensDrawer by BooleanPref(FeatureFlags.KEY_HOME_OPENS_DRAWER, true)
     override val usePixelIcons by BooleanPref(FeatureFlags.KEY_PREF_PIXEL_STYLE_ICONS, true)
     override val autoAddShortcuts by BooleanPref(FeatureFlags.KEY_PREF_AUTO_ADD_SHORTCUTS, true)
-    override val enableScreenRotation by BooleanPref(FeatureFlags.KEY_PREF_ENABLE_SCREEN_ROTATION, false)
+    override val enableScreenRotation by BooleanPref(FeatureFlags.KEY_PREF_ENABLE_SCREEN_ROTATION, true)  //默认支持旋转屏幕  add  by zhai
     override val hideAppLabels by BooleanPref(FeatureFlags.KEY_PREF_HIDE_APP_LABELS, false)
     override val hideAllAppsAppLabels by BooleanPref(PreferenceFlags.KEY_PREF_HIDE_ALL_APPS_APP_LABELS, false)
     override val allowFullWidthWidgets by BooleanPref(FeatureFlags.KEY_PREF_FULL_WIDTH_WIDGETS, false)
