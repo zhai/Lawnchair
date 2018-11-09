@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
+import android.provider.Settings;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -60,11 +62,28 @@ public class HotSpotActivity extends FragmentActivity implements CompoundButton.
     private SharedPreferences mSharedPrefs;
     private boolean isReflectionOK = false;
 
+
+    static final int MY_PERMISSIONS_MANAGE_WRITE_SETTINGS = 100;
+    static final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 69;
+
+    private boolean mLocationPermission = false;
+    private boolean mSettingPermission = true;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.System.canWrite(getApplicationContext())) {
+                mSettingPermission = false;
+                Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, MY_PERMISSIONS_MANAGE_WRITE_SETTINGS);
+            }
+        }
 
         mSwitch = (Switch) findViewById(R.id.ap_button);
         mTetheringImage = (ImageView) findViewById(R.id.tethering_image);
@@ -106,6 +125,24 @@ public class HotSpotActivity extends FragmentActivity implements CompoundButton.
             AppRate.showRateDialogIfMeetsConditions(this);
         }
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == MY_PERMISSIONS_MANAGE_WRITE_SETTINGS) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                mSettingPermission = true;
+                if (!mLocationPermission) {
+                    //locationsPermission();
+                }
+            } else {
+                //settingPermission();
+            }
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

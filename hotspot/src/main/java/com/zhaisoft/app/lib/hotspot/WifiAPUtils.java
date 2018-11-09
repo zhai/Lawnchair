@@ -16,13 +16,13 @@ import java.lang.reflect.Method;
 public class WifiAPUtils {
 
     public static final String DEFAULT_PASSWORD = "12345678";
-    public static final String DEFAULT_SSID = "Free WiFi Hotspot";
+    public static final String DEFAULT_SSID = "汽车共享的无限流量WIFI";
     public static final String SECURE_OPEN = "Open";
     public static final String SECURE_WPA = "WPA";
     public static final String SECURE_WPA2 = "WPA2";
     public static int PASS_MIN_LENGTH = 8;
     public String ssid = DEFAULT_SSID;
-    public String securityType = SECURE_OPEN;
+    public String securityType = SECURE_WPA2;
     public String password = DEFAULT_PASSWORD;
 
     WifiManager mWifiManager;
@@ -93,11 +93,11 @@ public class WifiAPUtils {
                 try {
                     isWifiApEnable = (Boolean) method.invoke(mWifiManager);
                 } catch (IllegalArgumentException e) {
-                  //  Crashlytics.logException(e);
+                    //  Crashlytics.logException(e);
                 } catch (IllegalAccessException e) {
-                   // Crashlytics.logException(e);
+                    // Crashlytics.logException(e);
                 } catch (InvocationTargetException e) {
-                   // Crashlytics.logException(e);
+                    // Crashlytics.logException(e);
                 }
                 break;
             }
@@ -121,13 +121,13 @@ public class WifiAPUtils {
             Object hotSpotProfile = mWifiApProfileField.get(config);
             mWifiApProfileField.setAccessible(false);
 
-            if(hotSpotProfile!=null){
+            if (hotSpotProfile != null) {
                 Field ssidField = hotSpotProfile.getClass().getDeclaredField("SSID");
                 ssidField.setAccessible(true);
                 ssidField.set(hotSpotProfile, config.SSID);
                 ssidField.setAccessible(false);
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
