@@ -100,6 +100,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.pavelsikun:vintage-chroma:1.5'
     implementation project(':launcherclient')
+    implementation project(':hotspot')
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.github.florent37:fiftyshadesof:1.0.0'

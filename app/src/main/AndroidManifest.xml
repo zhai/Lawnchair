@@ -37,6 +37,29 @@
     <uses-permission android:name="${applicationId}.permission.WRITE_SETTINGS" />
     <uses-permission android:name="${applicationId}.permission.QSB" />
 
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>"
+    <!-- 设置允许改变配置信息的权�?-->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:name=".App"
         android:backupAgent=".LauncherBackupAgent"
@@ -78,6 +101,11 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
+
+
+
+
+
         <activity
             android:name=".settings.ui.SettingsActivity"
             android:autoRemoveFromRecents="true"
@@ -87,6 +115,7 @@
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+
             </intent-filter>
         </activity>
         <activity
@@ -180,8 +209,8 @@
         <meta-data
             android:name="android.max_aspect"
             android:value="2.1" />
-        <meta-data 
-            android:name="com.samsung.android.non_immersive" 
+        <meta-data
+            android:name="com.samsung.android.non_immersive"
             android:value="true" />
 
         <activity
@@ -201,20 +230,24 @@
             </intent-filter>
         </activity-alias>
 
-        <activity android:name=".backup.BackupListActivity"
+        <activity
+            android:name=".backup.BackupListActivity"
             android:label="@string/backups"
             android:parentActivityName=".settings.ui.SettingsActivity"
             android:theme="@style/SettingsTheme" />
 
-        <activity android:name=".backup.NewBackupActivity"
+        <activity
+            android:name=".backup.NewBackupActivity"
             android:label="@string/new_backup"
             android:parentActivityName=".backup.BackupListActivity"
             android:theme="@style/SettingsTheme" />
 
-        <activity android:name=".backup.RestoreBackupActivity"
+        <activity
+            android:name=".backup.RestoreBackupActivity"
             android:label="@string/restore_backup"
             android:parentActivityName=".backup.BackupListActivity"
             android:theme="@style/SettingsTheme" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -222,14 +255,15 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name="ch.deletescape.lawnchair.dragndrop.AddItemActivity"
-            android:theme="@android:style/Theme.Material.Light.Dialog.Alert"
-            android:excludeFromRecents="true"
+        <activity
+            android:name="ch.deletescape.lawnchair.dragndrop.AddItemActivity"
             android:autoRemoveFromRecents="true"
-            android:label="@string/action_add_to_workspace" >
+            android:excludeFromRecents="true"
+            android:label="@string/action_add_to_workspace"
+            android:theme="@android:style/Theme.Material.Light.Dialog.Alert">
             <intent-filter>
                 <action android:name="android.content.pm.action.CONFIRM_PIN_SHORTCUT" />
                 <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET" />
@@ -239,7 +273,7 @@
         <activity
             android:name="ch.deletescape.lawnchair.gestures.dt2s.SleepTimeoutActivity"
             android:screenOrientation="locked"
-            android:theme="@style/SleepTimeoutTheme"/>
+            android:theme="@style/SleepTimeoutTheme" />
 
         <receiver
             android:name="ch.deletescape.lawnchair.gestures.dt2s.SleepDeviceAdmin"
@@ -252,6 +286,10 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
+
+
+
+
     </application>
 
 </manifest>

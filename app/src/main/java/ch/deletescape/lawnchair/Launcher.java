@@ -83,6 +83,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zhaisoft.app.lib.hotspot.HotSpotActivity;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -377,6 +379,8 @@ public class Launcher extends Activity
         }
 
         super.onCreate(savedInstanceState);
+
+        //startActivity(new Intent(this, HotSpotActivity.class));
 
         setScreenOrientation();
 
