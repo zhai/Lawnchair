@@ -305,7 +305,7 @@ public class HotSpotActivity extends FragmentActivity implements CompoundButton.
     private void showSpinner() {
         List<String> security = new ArrayList<String>();
         security.add(WifiAPUtils.SECURE_OPEN);
-        security.add(WifiAPUtils.SECURE_WPA);
+        //security.add(WifiAPUtils.SECURE_WPA);
         security.add(WifiAPUtils.SECURE_WPA2);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, security);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

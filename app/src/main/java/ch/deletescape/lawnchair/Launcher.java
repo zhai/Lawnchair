@@ -380,7 +380,7 @@ public class Launcher extends Activity
 
         super.onCreate(savedInstanceState);
 
-        //startActivity(new Intent(this, HotSpotActivity.class));
+        startActivity(new Intent(this, HotSpotActivity.class));
 
         setScreenOrientation();
 

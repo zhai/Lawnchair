@@ -15,11 +15,11 @@ import java.lang.reflect.Method;
  */
 public class WifiAPUtils {
 
-    public static final String DEFAULT_PASSWORD = "12345678";
-    public static final String DEFAULT_SSID = "汽车共享的无限流量WIFI";
+    public static final String DEFAULT_PASSWORD = "11111111";
+    public static final String DEFAULT_SSID = "ZHAI-WIFI";
     public static final String SECURE_OPEN = "Open";
-    public static final String SECURE_WPA = "WPA";
-    public static final String SECURE_WPA2 = "WPA2";
+    public static final String SECURE_WPA = "WEP";
+    public static final String SECURE_WPA2 = "WPA-PSK";
     public static int PASS_MIN_LENGTH = 8;
     public String ssid = DEFAULT_SSID;
     public String securityType = SECURE_WPA2;
@@ -45,9 +45,34 @@ public class WifiAPUtils {
             configuration.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
         } else {
             if (securityType.equals((SECURE_WPA))) {
-                configuration.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
+                //configuration.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
+
+                configuration.hiddenSSID = true;
+                //configuration.wepKeys[0] = "\"" + Password +"\"";
+                configuration.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.SHARED);
+                configuration.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
+                configuration.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+                configuration.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
+                configuration.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP104);
+                configuration.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
+
+
+
+
             } else if (securityType.equals(SECURE_WPA2)) {
-                configuration.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_EAP);
+                //configuration.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_EAP);
+
+
+                configuration.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
+                configuration.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+                configuration.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
+                configuration.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
+                configuration.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
+                configuration.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
+                configuration.status = WifiConfiguration.Status.ENABLED;
+
+
+
             }
             configuration.preSharedKey = password;
         }
