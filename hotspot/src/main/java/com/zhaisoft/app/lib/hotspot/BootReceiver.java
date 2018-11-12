@@ -32,8 +32,12 @@ public class BootReceiver extends BroadcastReceiver {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (!Settings.System.canWrite(context.getApplicationContext())) {
                         mSettingPermission = false;
-                        Intent intent2 = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:" + context.getPackageName()));
-                        context.startActivity(intent2);
+                        try {
+                            Intent intent2 = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:" + context.getPackageName()));
+                            context.startActivity(intent2);
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
                     }
                 }
                 if (mWifiAPUtils.setAP(true)) {

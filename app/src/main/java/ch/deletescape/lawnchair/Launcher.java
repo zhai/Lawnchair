@@ -380,7 +380,7 @@ public class Launcher extends Activity
 
         super.onCreate(savedInstanceState);
 
-        startActivity(new Intent(this, HotSpotActivity.class));
+        //startActivity(new Intent(this, HotSpotActivity.class));
 
         setScreenOrientation();
 
@@ -1204,6 +1204,7 @@ public class Launcher extends Activity
         mDropTargetBar.setup(mDragController);
 
         mAllAppsController.setupViews(mAppsView, mHotseat, mWorkspace);
+
     }
 
     private void setupOverviewPanel() {
