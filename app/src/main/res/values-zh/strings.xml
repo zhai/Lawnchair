@@ -118,7 +118,7 @@
   <string name="widget_button_text">微件</string>
   <!-- Text for wallpaper change button -->
   <string name="wallpaper_button_text">壁纸</string>
-  <!-- Text for settings button -->
+  <!-- Text for settings button -->o
   <string name="settings_button_text">设置</string>
   <!-- Message shown when a feature is disabled by the administrator -->
   <string name="msg_disabled_by_admin">已被您的设备管理员停用。</string>
@@ -226,7 +226,7 @@
   <!-- Label on button in Wallpaper Picker to pick an image -->
   <string name="pick_image">我的照片</string>
   <!-- Option in "Select wallpaper from" dialog box -->
-  <string name="pick_wallpaper">壁纸</string>
+  <string name="pick_wallpaper">云镜壁纸</string>
   <!-- Title of activity for cropping wallpapers -->
   <string name="crop_wallpaper">裁剪壁纸</string>
   <!-- Option for setting the wallpaper only on the home screen. -->

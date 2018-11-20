@@ -65,4 +65,20 @@
         android:textColor="@color/overview_button_text_color"
         android:textSize="12sp" />
 
+
+    <TextView
+        android:id="@+id/settings2_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawablePadding="4dp"
+        android:drawableTop="@drawable/ic_setting"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal"
+        android:stateListAnimator="@animator/overview_button_anim"
+        android:text="高级设置"
+        android:textAllCaps="true"
+        android:textColor="@color/overview_button_text_color"
+        android:textSize="12sp" />
+
 </LinearLayout>
