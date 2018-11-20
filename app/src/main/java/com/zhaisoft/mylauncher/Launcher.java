@@ -170,10 +170,10 @@ public class Launcher extends Activity
 
     // The Intent extra that defines whether to ignore the launch animation
     static final String INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION =
-            "ch.deletescape.lawnchair.intent.extra.shortcut.INGORE_LAUNCH_ANIMATION";
+            "com.zhaisoft.mylauncher.intent.extra.shortcut.INGORE_LAUNCH_ANIMATION";
 
     public static final String ACTION_APPWIDGET_HOST_RESET =
-            "ch.deletescape.lawnchair.intent.ACTION_APPWIDGET_HOST_RESET";
+            "com.zhaisoft.mylauncher.intent.ACTION_APPWIDGET_HOST_RESET";
 
     // Type: int
     private static final String RUNTIME_STATE_CURRENT_SCREEN = "launcher.current_screen";

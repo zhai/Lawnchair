@@ -34,7 +34,7 @@ import com.zhaisoft.mylauncher.compat.UserManagerCompat;
  * Not to be confused with {@link com.zhaisoft.mylauncher.ShortcutInfo}.
  */
 public class ShortcutInfoCompat {
-    private static final String INTENT_CATEGORY = "ch.deletescape.lawnchair.DEEP_SHORTCUT";
+    private static final String INTENT_CATEGORY = "com.zhaisoft.mylauncher.DEEP_SHORTCUT";
     public static final String EXTRA_SHORTCUT_ID = "shortcut_id";
     private String packageName;
     private String id;

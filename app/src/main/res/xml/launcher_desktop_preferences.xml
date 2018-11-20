@@ -86,7 +86,7 @@
             android:summary="%s"
             android:title="@string/num_rows_pref_title" />
 
-        <ch.deletescape.lawnchair.preferences.SeekbarPreference
+        <com.zhaisoft.mylauncher.preferences.SeekbarPreference
             android:key="pref_iconScaleSB"
             android:persistent="true"
             android:title="@string/icon_scale_pref_title"
@@ -97,7 +97,7 @@
             app:summaryFormat="%.0f%%"
             app:summaryMultiplier="100" />
 
-        <ch.deletescape.lawnchair.preferences.SeekbarPreference
+        <com.zhaisoft.mylauncher.preferences.SeekbarPreference
             android:dependency="pref_hideAppLabels"
             android:key="pref_iconTextScaleSB"
             android:persistent="true"

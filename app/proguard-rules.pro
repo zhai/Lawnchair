@@ -1,29 +1,29 @@
--keep,allowshrinking,allowoptimization class ch.deletescape.lawnchair.** {
+-keep,allowshrinking,allowoptimization class com.zhaisoft.mylauncher.** {
   *;
 }
 
--keep class ch.deletescape.lawnchair.BaseRecyclerViewFastScrollBar {
+-keep class com.zhaisoft.mylauncher.BaseRecyclerViewFastScrollBar {
   public void setThumbWidth(int);
   public int getThumbWidth();
   public void setTrackWidth(int);
   public int getTrackWidth();
 }
 
--keep class ch.deletescape.lawnchair.BaseRecyclerViewFastScrollPopup {
+-keep class com.zhaisoft.mylauncher.BaseRecyclerViewFastScrollPopup {
   public void setAlpha(float);
   public float getAlpha();
 }
 
--keep class ch.deletescape.lawnchair.ButtonDropTarget {
+-keep class com.zhaisoft.mylauncher.ButtonDropTarget {
   public int getTextColor();
 }
 
--keep class ch.deletescape.lawnchair.CellLayout {
+-keep class com.zhaisoft.mylauncher.CellLayout {
   public float getBackgroundAlpha();
   public void setBackgroundAlpha(float);
 }
 
--keep class ch.deletescape.lawnchair.CellLayout$LayoutParams {
+-keep class com.zhaisoft.mylauncher.CellLayout$LayoutParams {
   public void setWidth(int);
   public int getWidth();
   public void setHeight(int);
@@ -34,7 +34,7 @@
   public int getY();
 }
 
--keep class ch.deletescape.lawnchair.dragndrop.DragLayer$LayoutParams {
+-keep class com.zhaisoft.mylauncher.dragndrop.DragLayer$LayoutParams {
   public void setWidth(int);
   public int getWidth();
   public void setHeight(int);
@@ -45,24 +45,24 @@
   public int getY();
 }
 
--keep class ch.deletescape.lawnchair.FastBitmapDrawable {
+-keep class com.zhaisoft.mylauncher.FastBitmapDrawable {
   public void setDesaturation(float);
   public float getDesaturation();
   public void setBrightness(float);
   public float getBrightness();
 }
 
--keep class ch.deletescape.lawnchair.PreloadIconDrawable {
+-keep class com.zhaisoft.mylauncher.PreloadIconDrawable {
   public float getAnimationProgress();
   public void setAnimationProgress(float);
 }
 
--keep class ch.deletescape.lawnchair.pageindicators.CaretDrawable {
+-keep class com.zhaisoft.mylauncher.pageindicators.CaretDrawable {
   public float getCaretProgress();
   public void setCaretProgress(float);
 }
 
--keep class ch.deletescape.lawnchair.Workspace {
+-keep class com.zhaisoft.mylauncher.Workspace {
   public float getBackgroundAlpha();
   public void setBackgroundAlpha(float);
 }
@@ -78,20 +78,20 @@
 -dontwarn javax.**
 -dontwarn org.codehaus.mojo.animal_sniffer.**
 
--keep class ch.deletescape.lawnchair.DeferredHandler {
+-keep class com.zhaisoft.mylauncher.DeferredHandler {
  *;
 }
 
 # Proguard will strip new callbacks in LauncherApps.Callback from
 # WrappedCallback if compiled against an older SDK. Don't let this happen.
--keep class ch.deletescape.lawnchair.compat.** {
+-keep class com.zhaisoft.mylauncher.compat.** {
   *;
 }
 
--keep class ch.deletescape.lawnchair.preferences.HiddenAppsFragment {
+-keep class com.zhaisoft.mylauncher.preferences.HiddenAppsFragment {
   *;
 }
 
--keep class ch.deletescape.lawnchair.preferences.ShortcutBlacklistFragment {
+-keep class com.zhaisoft.mylauncher.preferences.ShortcutBlacklistFragment {
   *;
 }

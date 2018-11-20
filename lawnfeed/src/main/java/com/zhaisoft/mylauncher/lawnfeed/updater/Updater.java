@@ -84,7 +84,7 @@ public class Updater {
                 NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(0, builder.build());
 
-                // Cache update
+                // Cache updated
                 if (!update.isCached()) {
                     prefs.edit()
                             .putLong(PREFERENCES_LAST_CHECKED, System.currentTimeMillis())

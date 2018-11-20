@@ -157,8 +157,8 @@
             android:name="com.zhaisoft.mylauncher.LauncherProvider"
             android:authorities="${applicationId}.settings"
             android:exported="true"
-            android:readPermission="ch.deletescape.lawnchair.permission.READ_SETTINGS"
-            android:writePermission="ch.deletescape.lawnchair.permission.WRITE_SETTINGS" />
+            android:readPermission="com.zhaisoft.mylauncher.permission.READ_SETTINGS"
+            android:writePermission="com.zhaisoft.mylauncher.permission.WRITE_SETTINGS" />
 
         <receiver
             android:name="com.zhaisoft.mylauncher.InstallShortcutReceiver"

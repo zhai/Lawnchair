@@ -370,7 +370,7 @@ class LawnfeedClient(private val launcher: Launcher) : ILauncherClient {
     }
 
     companion object {
-        const val PROXY_PACKAGE = "ch.deletescape.lawnchair.lawnfeed"
+        const val PROXY_PACKAGE = "com.zhaisoft.mylauncher.lawnfeed"
         const val PROXY_SERVICE = ".LauncherClientProxyService"
         const val TAG = "LawnfeedClient"
 

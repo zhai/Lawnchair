@@ -23,7 +23,7 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
-        applicationId "ch.deletescape.lawnchair"
+        applicationId "com.zhaisoft.mylauncher"
 
         buildConfigField "boolean", "TRAVIS", System.getenv("TRAVIS") ?: "false"
         buildConfigField "boolean", "TAGGED_BUILD", System.getenv("TRAVIS_TAG") ? "true" : "false"
@@ -39,7 +39,7 @@ android {
             versionName = System.getenv("MAJOR_MINOR") + (System.getenv("DRONE") ? "-" : ".") + System.getenv("TRAVIS_BUILD_NUMBER")
         } else {
             versionCode 1
-            versionName "dev"
+            versionName "1.0.1"
         }
     }
 
@@ -75,7 +75,7 @@ android {
     }
 
     lintOptions {
-        abortOnError true
+        abortOnError false
     }
 }
 

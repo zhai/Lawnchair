@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "ch.deletescape.lawnchair.lawnfeed"
+        applicationId "com.zhaisoft.mylauncher.lawnfeed"
         minSdkVersion 21
         targetSdkVersion 27
 
