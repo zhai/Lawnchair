@@ -123,7 +123,7 @@
                 android:key="pref_hiddenApps"
                 android:title="@string/hide_app"
                 android:summary="@string/hide_app_sum"
-                android:fragment="ch.deletescape.lawnchair.preferences.HiddenAppsFragment" />
+                android:fragment="com.zhaisoft.mylauncher.preferences.HiddenAppsFragment" />
         
             <SwitchPreference
                 android:key="pref_enablePhysics"
