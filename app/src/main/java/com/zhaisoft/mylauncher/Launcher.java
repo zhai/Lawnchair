@@ -90,6 +90,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.zhaisoft.lib.updater.AndroidUpdateSDK;
 import com.zhaisoft.mylauncher.DropTarget.DragObject;
 import com.zhaisoft.mylauncher.LauncherSettings.Favorites;
 import com.zhaisoft.mylauncher.accessibility.LauncherAccessibilityDelegate;
@@ -454,6 +455,13 @@ public class Launcher extends Activity
         window.setNavigationBarColor(0);
 
         Settings.init(this);
+
+
+        initUpdate();
+    }
+
+    private void initUpdate() {
+        AndroidUpdateSDK.getInstance().init(Launcher.this, false, "http://api.zhaisoft.com/app_update/com.zhaisoft.mylauncher//update.txt");
     }
 
 
@@ -792,8 +800,8 @@ public class Launcher extends Activity
                         getString(R.string.app_name)), Toast.LENGTH_SHORT).show();
             }
         }
-        if (requestCode == REQUEST_PERMISSION_STORAGE_ACCESS){
-            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)){
+        if (requestCode == REQUEST_PERMISSION_STORAGE_ACCESS) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 final Launcher _this = this;
                 DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
                     @Override
@@ -3400,7 +3408,7 @@ public class Launcher extends Activity
                     throw new RuntimeException("Invalid Item Type");
             }
 
-             /*
+            /*
              * Remove colliding items.
              */
             if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP) {
